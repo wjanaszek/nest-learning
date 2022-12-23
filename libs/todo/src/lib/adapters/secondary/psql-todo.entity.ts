@@ -7,12 +7,12 @@ import {
 } from 'typeorm';
 import { PsqlTodoStatusEnum } from './psql-todo-status.enum';
 
-@Entity('TODOS')
+@Entity({ name: 'todos' })
 export class PsqlTodoEntity {
-  @PrimaryColumn({ type: 'string' })
+  @PrimaryColumn({ type: 'text' })
   id!: string;
 
-  @Column({ type: 'string' })
+  @Column({ type: 'text' })
   description!: string;
 
   @Column({ type: 'enum', enum: PsqlTodoStatusEnum })
